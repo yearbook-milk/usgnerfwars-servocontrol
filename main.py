@@ -1,9 +1,9 @@
 import servo_relay_interface as sri
 import time 
 
-sri.config["leftPin"] = 12
-sri.config["rightPin"] = 33
-sri.config["yawPin"] = 32
+sri.config["leftPin"] = 18
+sri.config["rightPin"] = 13
+sri.config["yawPin"] = 12
 sri.config["afterSpdCmdDelay"] = 0.8
 sri.config["pulse_freq"] = 50
 
