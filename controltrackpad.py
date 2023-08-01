@@ -8,9 +8,9 @@ unlockControls = True
 pitch = 0
 yaw = 0
 
-sri.config["leftPin"] = 18
-sri.config["rightPin"] = 13
-sri.config["yawPin"] = 12
+sri.config["leftPin"] = 12
+sri.config["rightPin"] = 33
+sri.config["yawPin"] = 32
 sri.config["afterSpdCmdDelay"] = 0.0
 sri.config["pulse_freq"] = 50
 
