@@ -14,7 +14,7 @@ config = {
 
 "afterSpdCmdDelay": 0,
 "pulse_freq": 50,
-"pinsToSet": "leftPin rightPin yawPin"    
+"pinsToSet": "leftPin rightPin yawPin",
 
 "yaw_limits": (-90, 90),
 "pitch_limits": (-35, 90),
@@ -43,6 +43,7 @@ def centerAllAxes():
 
 
 def pitch(angle):
+    angle *= -1
     global pwmL, pwmR, config, pwmP, pwm
     assert (config["pitch_limits"][0] <= angle <= config["pitch_limits"][1])
     angle += 90
@@ -51,6 +52,7 @@ def pitch(angle):
     time.sleep(config["afterSpdCmdDelay"])
     
 def yaw(angle):
+    angle *= -1
     global pwmL, pwmR, config, pwmP, pwm
     assert (config["yaw_limits"][0] <= angle <= config["yaw_limits"][1])
     angle += 90
@@ -94,7 +96,7 @@ def __shutdown():
     for i in config["pinsToSet"].split(" "):
         pwm.set_PWM_dutycycle( config[i], 0 )
     global fire, rev
-    if fire: toggleFire()
-    
+    pitch(+15)
+    if fire: toggleFire()    
     if rev: toggleRev()
 
